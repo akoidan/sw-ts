@@ -5,9 +5,6 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({hash: true, template: 'src/index.html'}),
   ],
-  resolve: {
-    extensions: ['.ts', '.js', '.json'],
-  },
   devtool: '#source-map',
   module: {
     rules: [
@@ -30,10 +27,6 @@ module.exports = {
       {
         test: /\.ts$/,
         loader: 'ts-loader',
-        exclude: /node_modules/,
-        options: {
-          appendTsSuffixTo: [/\.vue$/]
-        }
       },
     ],
   },
