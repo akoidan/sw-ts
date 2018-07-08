@@ -11,18 +11,11 @@ module.exports = {
       {
         test: /sw\.ts$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: '',
-              name: 'sw.js?[sha512:hash:base64:6]',
-            }
-          },
-          {
-            loader: 'ts-loader',
-          },
-        ],
+        loader: 'file-loader',
+        options: {
+          outputPath: '',
+          name: 'sw.js?[sha512:hash:base64:6]',
+        }
       },
       {
         test: /\.ts$/,
@@ -31,3 +24,5 @@ module.exports = {
     ],
   },
 };
+
+console.log('webpack ran')
